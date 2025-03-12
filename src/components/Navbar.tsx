@@ -32,7 +32,7 @@ const Navbar = () => {
   return (
     <header 
     className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'py-3 bg-white shadow-sm backdrop-blur-md' : 'py-5 bg-transparent'
+      isScrolled ? 'py-3 bg-white shadow-sm backdrop-blur-md' : 'py-5 '
     }`}
   >
   
@@ -61,19 +61,19 @@ const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden p-2 text-apex-purple"
+            className="md:hidden flex items-center justify-center p-1.5 text-apex-purple hover:bg-gray-100 rounded-md transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[56px] bg-white/90 backdrop-blur-md z-40 animate-fade-in">
-          <nav className="flex flex-col items-center pt-8 pb-8 space-y-6">
+        <div className="md:hidden fixed inset-0 top-[56px] bg-white  z-40 animate-fade-in">
+          <nav className="flex flex-col items-center bg-white  pt-8 pb-8 space-y-6">
             <NavLink to="/" active={isActive('/')}>Home</NavLink>
             <NavLink to="/about" active={isActive('/about')}>About</NavLink>
             <NavLink to="/services" active={isActive('/services')}>Services</NavLink>

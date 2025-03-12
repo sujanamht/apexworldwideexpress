@@ -69,7 +69,7 @@ const HeroSection = ({
       {fullHeight && (
         <button 
           onClick={scrollToContent}
-          className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-float cursor-pointer"
+          className="absolute bottom-20 md:bottom-24 left-1/2 transform -translate-x-1/2 text-white animate-float cursor-pointer"
           aria-label="Scroll down"
         >
           <ChevronDown size={36} />

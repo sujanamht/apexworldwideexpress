@@ -94,7 +94,7 @@ const About = () => {
           <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${
             isVisible.mission ? 'animate-fade-in' : 'opacity-0'
           }`}>
-            <div className="order-2 lg:order-1">
+            <div className="order-1">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-apex-purple">APEX WORLDWIDE EXPRESS</h2>
               <p className="text-gray-700 mb-5 text-justify">
                 Founded in 2008, Apex Worldwide Express began with a simple mission: to provide fast, reliable, and affordable shipping solutions that meet the highest standards of quality and customer service.
@@ -106,7 +106,7 @@ const About = () => {
                 Today, we are proud to be a trusted partner for businesses of all sizes, from small e-commerce startups to large multinational corporations. Our comprehensive range of services is designed to provide end-to-end solutions for all your shipping and logistics needs.
               </p>
             </div>
-            <div className="order-1 lg:order-2">
+            <div className="order-2">
               <div className="relative">
                 <div className="aspect-video rounded-2xl overflow-hidden shadow-lg">
                   <img 
@@ -178,9 +178,9 @@ const About = () => {
           <div className=" mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">Our Purpose</h2>
             
-            <div className=" flex justify-between space-x-6">
+            <div className=" flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 md:space-x-6">
               {/* Vision */}
-              <div className="bg-white w-1/2 border border-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-white w-full md:w-1/2 border border-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-7">
                   
                   <div className="flex-grow">
@@ -201,7 +201,7 @@ const About = () => {
                 </div>
               </div>
               {/* Mission */}
-              <div className="bg-white w-1/2 border border-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-white w-full md:w-1/2 border border-gray-100 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0 w-12 h-12 bg-apex-purple/10 rounded-lg flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-apex-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">

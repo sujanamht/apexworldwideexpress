@@ -3,11 +3,11 @@ import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'luc
 
 const Footer = () => {
   return (
-    <footer className="bg-apex-purple text-white pt-16 pb-8">
+    <footer className="bg-apex-purple text-white px-6 md:px-0 pt-16 pb-8">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 pb-8">
           {/* Company Info */}
-          <div className="space-y-4">
+          <div className=" space-y-4">
             <img 
               src="/logo.png" 
               alt="Apex Worldwide Express" 
@@ -38,8 +38,8 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
+          <div >
+            <h3 className="text-lg font-semibold my-6 md:my-2">Quick Links</h3>
             <ul className="space-y-3">
               <FooterLink to="/">Home</FooterLink>
               <FooterLink to="/about">About Us</FooterLink>
@@ -51,7 +51,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Our Services</h3>
+            <h3 className="text-lg font-semibold my-6 md:my-2">Our Services</h3>
             <ul className="space-y-3">
               <FooterLink to="/services">Domestic Shipping</FooterLink>
               <FooterLink to="/services">International Shipping</FooterLink>
@@ -65,7 +65,7 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             
-            <div className="w-full h-[250px] overflow-hidden rounded-lg mb-4">
+            <div className="w-full h-[250px] overflow-hidden rounded-lg my-4 md:my-2">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28257.0750489018!2d85.3200712!3d27.7131369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1901934f8861%3A0xbc3c138e61533293!2sApex%20Worldwide%20Express%20Pvt%20Ltd!5e0!3m2!1sen!2sus!4v1741755384550!5m2!1sen!2sus" 
                 width="100%" 

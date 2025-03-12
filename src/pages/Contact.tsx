@@ -100,7 +100,7 @@ const Contact = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-8 px-16">
+            <div className="space-y-8 md:px-16">
               <div>
                 <h2 className="text-3xl md:text-4xl text-center font-bold mb-16 text-apex-purple">Our Branches</h2>
                 
@@ -182,7 +182,7 @@ const Contact = () => {
 
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-soft p-8">
-              {/* <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3> */}
+              <h3 className="text-2xl text-center font-bold mb-6">Send Us a Message</h3>
               
               {submitSuccess ? (
                 <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 animate-fade-in">

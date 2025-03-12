@@ -54,7 +54,18 @@ const Index = () => {
   ];
 
   const [currentTestimonialPage, setCurrentTestimonialPage] = useState(0);
-  const testimonialsPerPage = 3;
+  const [testimonialsPerPage, setTestimonialsPerPage] = useState(3);
+
+  useEffect(() => {
+    const updateTestimonialsPerPage = () => {
+      setTestimonialsPerPage(window.innerWidth < 640 ? 1 : 3);
+    };
+
+    updateTestimonialsPerPage(); // Set initial value based on screen size
+    window.addEventListener("resize", updateTestimonialsPerPage);
+
+    return () => window.removeEventListener("resize", updateTestimonialsPerPage);
+  }, []);
   const totalPages = Math.ceil(testimonials.length / testimonialsPerPage);
 
   useEffect(() => {
