@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import { Search, Package, CheckCircle, ArrowRight, MapPin, Truck } from 'lucide-react';
@@ -112,7 +111,8 @@ const Tracking = () => {
         title="Track Your Shipment" 
         subtitle="Get real-time updates on your package location" 
         showCta={false}
-        backgroundImage="bg-gradient-to-r from-apex-purple to-apex-purple/70"
+        fullHeight={false}
+        backgroundImage="bg-[url('/slider2.jpeg')]"
       />
 
       {/* Tracking Form Section */}
@@ -145,7 +145,7 @@ const Tracking = () => {
                 <button
                   type="submit"
                   disabled={isTracking}
-                  className={`button-gradient w-full px-6 py-3 rounded-lg flex items-center justify-center shadow-soft ${
+                  className={`bg-apex-purple text-white w-full px-6 py-3 rounded-lg flex items-center justify-center shadow-soft hover:bg-apex-purple/90 transition-colors ${
                     isTracking ? 'opacity-70 cursor-not-allowed' : ''
                   }`}
                 >

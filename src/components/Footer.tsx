@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
@@ -10,13 +9,26 @@ const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <img 
-              src="/lovable-uploads/7048cf04-521d-4440-af2a-5332c1c13fdf.png" 
+              src="/logo.png" 
               alt="Apex Worldwide Express" 
               className="h-12 mb-4 brightness-0 invert" 
             />
-            <p className="text-sm text-gray-300 max-w-xs">
-              Fast, secure, and reliable parcel services delivering across the USA and beyond with speed & efficiency.
-            </p>
+            <ul className="space-y-4">
+              <li className="flex items-start">
+                <MapPin size={18} className="mr-3 mt-1 text-apex-orange" />
+                <span className="text-sm">
+                 Durbarmarg, Kathmandu, Nepal
+                </span>
+              </li>
+              <li className="flex items-center">
+                <Phone size={18} className="mr-3 text-apex-orange" />
+                <span className="text-sm">+977-01-5199458</span>
+              </li>
+              <li className="flex items-center">
+                <Mail size={18} className="mr-3 text-apex-orange" />
+                <span className="text-sm">info@apexworldwide.com.np</span>
+              </li>
+            </ul>
             <div className="flex space-x-4 pt-2">
               <SocialIcon icon={<Facebook size={18} />} />
               <SocialIcon icon={<Twitter size={18} />} />
@@ -52,40 +64,32 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Contact Us</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <MapPin size={18} className="mr-3 mt-1 text-apex-orange" />
-                <span className="text-sm">
-                  Khasra no 819 k-2, Block Apex House, Mahipalpur, New Delhi - 110037
-                </span>
-              </li>
-              <li className="flex items-center">
-                <Phone size={18} className="mr-3 text-apex-orange" />
-                <span className="text-sm">+91 93114141207</span>
-              </li>
-              <li className="flex items-center">
-                <Mail size={18} className="mr-3 text-apex-orange" />
-                <span className="text-sm">Awexpress.delhi@gmail.com</span>
-              </li>
-            </ul>
+            
+            <div className="w-full h-[250px] overflow-hidden rounded-lg mb-4">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d28257.0750489018!2d85.3200712!3d27.7131369!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1901934f8861%3A0xbc3c138e61533293!2sApex%20Worldwide%20Express%20Pvt%20Ltd!5e0!3m2!1sen!2sus!4v1741755384550!5m2!1sen!2sus" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true}
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full"
+                title="Apex Worldwide Express Location"
+              />
+            </div>
           </div>
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-700 pt-8 mt-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-gray-700 pt-6 mt-2">
+          <div className="flex flex-col  justify-between items-center">
             <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Apex Worldwide Express. All rights reserved.
             </p>
-            <div className="flex mt-4 md:mt-0 text-sm text-gray-400 space-x-6">
-              <Link to="/privacy-policy" className="hover:text-apex-orange transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms-of-service" className="hover:text-apex-orange transition-colors">
-                Terms of Service
-              </Link>
-            </div>
+            <p className="mt-2 text-sm text-gray-400">
+              Designed and developed by <a href="https://itnepalsolutions.com" target="_blank" rel="noopener noreferrer" className="hover:text-apex-orange text-gray-200 font-semibold transition-colors">IT Nepal Solutions</a>
+            </p>
           </div>
         </div>
       </div>

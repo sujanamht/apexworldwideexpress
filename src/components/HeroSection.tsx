@@ -1,4 +1,3 @@
-
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -32,6 +31,9 @@ const HeroSection = ({
         fullHeight ? 'min-h-screen' : 'min-h-[50vh]'
       } flex items-center justify-center`}
     >
+      {/* Dark overlay */}
+      <div className="absolute inset-0" style={{ backgroundColor: 'rgba(56, 22, 77, 0.8)' }}></div>
+      
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 
@@ -48,7 +50,7 @@ const HeroSection = ({
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in animation-delay-300">
               <Link 
                 to="/tracking" 
-                className="button-gradient px-8 py-3 rounded-full font-medium min-w-[180px] hover:shadow-xl"
+                className="bg-[#E49210] text-white px-8 py-3 rounded-full font-medium min-w-[180px] hover:bg-[#d18510] hover:shadow-xl transition-all duration-300"
               >
                 Track Your Parcel
               </Link>

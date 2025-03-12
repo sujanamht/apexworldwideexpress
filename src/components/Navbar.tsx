@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -32,16 +31,17 @@ const Navbar = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'py-3 bg-white/90 shadow-sm backdrop-blur-md' : 'py-5 bg-transparent'
-      }`}
-    >
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled ? 'py-3 bg-white shadow-sm backdrop-blur-md' : 'py-5 bg-transparent'
+    }`}
+  >
+  
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/7048cf04-521d-4440-af2a-5332c1c13fdf.png" 
+              src="/logo.png" 
               alt="Apex Worldwide Express" 
               className="h-10 md:h-12" 
             />
@@ -72,7 +72,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden fixed inset-0 top-[56px] bg-white z-40 animate-fade-in">
+        <div className="md:hidden fixed inset-0 top-[56px] bg-white/90 backdrop-blur-md z-40 animate-fade-in">
           <nav className="flex flex-col items-center pt-8 pb-8 space-y-6">
             <NavLink to="/" active={isActive('/')}>Home</NavLink>
             <NavLink to="/about" active={isActive('/about')}>About</NavLink>

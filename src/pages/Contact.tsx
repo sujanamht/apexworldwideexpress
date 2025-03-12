@@ -1,10 +1,9 @@
-
 import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import { MapPin, Phone, Mail, Send } from 'lucide-react';
 
 const Contact = () => {
-  const [activeTab, setActiveTab] = useState('india');
+  const [activeTab, setActiveTab] = useState('nepal');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -60,26 +59,26 @@ const Contact = () => {
   };
 
   const locations = {
+    nepal: {
+      title: 'Kathmandu, Nepal',
+      address: 'Lal Durbar Marg, Durbarmarg, Kathmandu, Nepal',
+      addressLink: 'https://maps.app.goo.gl/N7ttnbKeqDwxNcmK7',
+      email: 'contact@apexparcel.com',
+      phone: '+977 01-4438480',
+    },
     india: {
       title: 'Delhi, India',
       address: 'Khasra no 819 k-2, Block Apex House, Mahipalpur, New Delhi - 110037',
+      addressLink: 'https://maps.app.goo.gl/B69518rfy3quYbwk6',
       email: 'Awexpress.delhi@gmail.com',
       phone: '+91 93114141207',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0168878895483!2d77.1047!3d28.5500!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1c3bfe6fec8d%3A0xbff3f22ae995b772!2sMahipalpur%2C%20New%20Delhi%2C%20Delhi%20110037!5e0!3m2!1sen!2sin!4v1634720126548!5m2!1sen!2sin'
-    },
-    nepal: {
-      title: 'Kathmandu, Nepal',
-      address: 'Apex Worldwide Express Pvt Ltd, P87C+53, Kathmandu 44600',
-      email: 'contact@apexparcel.com',
-      phone: '+977 980-XXXXXXX',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56516.27776878402!2d85.2911361769999!3d27.70903195275577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb198a307baabf%3A0xb5137c1bf18db1ea!2sKathmandu%2044600%2C%20Nepal!5e0!3m2!1sen!2sus!4v1634720277064!5m2!1sen!2sus'
     },
     singapore: {
       title: 'Singapore',
       address: 'APEX Parcel Singapore Office, Singapore 123456',
+      addressLink: '#',
       email: 'singapore@apexparcel.com',
       phone: '+65 XXXXXXXX',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036183483!2d103.7041654264152!3d1.3139961237914428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2sus!4v1634720364456!5m2!1sen!2sus'
     }
   };
 
@@ -89,9 +88,11 @@ const Contact = () => {
     <div>
       {/* Hero Section */}
       <HeroSection 
-        title="Get in Touch with Apex Parcel" 
+        title="Get in Touch" 
         subtitle="We're here to assist you with all your shipping and logistics needs" 
         showCta={false}
+        fullHeight={false}
+        backgroundImage="bg-[url('/contact.jpg')]"
       />
 
       {/* Contact Section */}
@@ -99,25 +100,12 @@ const Contact = () => {
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className="space-y-8">
+            <div className="space-y-8 px-16">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-8 text-apex-purple">Our Branches</h2>
+                <h2 className="text-3xl md:text-4xl text-center font-bold mb-16 text-apex-purple">Our Branches</h2>
                 
                 {/* Location Tabs */}
-                <div className="flex flex-wrap border-b border-gray-200 mb-8">
-                  <button
-                    className={`mr-8 pb-4 font-medium transition-colors relative ${
-                      activeTab === 'india' 
-                        ? 'text-apex-orange' 
-                        : 'text-gray-500 hover:text-apex-purple'
-                    }`}
-                    onClick={() => setActiveTab('india')}
-                  >
-                    India 🇮🇳
-                    {activeTab === 'india' && (
-                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-apex-orange rounded-full"></span>
-                    )}
-                  </button>
+                <div className="flex flex-wrap justify-between  border-b border-gray-200 mb-8">
                   <button
                     className={`mr-8 pb-4 font-medium transition-colors relative ${
                       activeTab === 'nepal' 
@@ -128,6 +116,19 @@ const Contact = () => {
                   >
                     Nepal 🇳🇵
                     {activeTab === 'nepal' && (
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-apex-orange rounded-full"></span>
+                    )}
+                  </button>
+                  <button
+                    className={`mr-8 pb-4 font-medium transition-colors relative ${
+                      activeTab === 'india' 
+                        ? 'text-apex-orange' 
+                        : 'text-gray-500 hover:text-apex-purple'
+                    }`}
+                    onClick={() => setActiveTab('india')}
+                  >
+                    India 🇮🇳
+                    {activeTab === 'india' && (
                       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-apex-orange rounded-full"></span>
                     )}
                   </button>
@@ -153,7 +154,14 @@ const Contact = () => {
                   <div className="space-y-4">
                     <div className="flex items-start">
                       <MapPin size={20} className="mr-3 mt-1 text-apex-orange shrink-0" />
-                      <span>{activeLocation.address}</span>
+                      <a 
+                        href={activeLocation.addressLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="hover:text-apex-orange"
+                      >
+                        {activeLocation.address}
+                      </a>
                     </div>
                     <div className="flex items-center">
                       <Mail size={20} className="mr-3 text-apex-orange shrink-0" />
@@ -170,24 +178,11 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-
-              {/* Map */}
-              <div className="h-[300px] md:h-[400px] rounded-xl overflow-hidden shadow-soft">
-                <iframe 
-                  src={activeLocation.mapUrl}
-                  width="100%" 
-                  height="100%" 
-                  style={{ border: 0 }} 
-                  allowFullScreen={false} 
-                  loading="lazy"
-                  title={`${activeLocation.title} Map`}
-                ></iframe>
-              </div>
             </div>
 
             {/* Contact Form */}
             <div className="bg-white rounded-2xl shadow-soft p-8">
-              <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3>
+              {/* <h3 className="text-2xl font-bold mb-6">Send Us a Message</h3> */}
               
               {submitSuccess ? (
                 <div className="bg-green-50 border border-green-200 text-green-700 rounded-lg p-4 animate-fade-in">
@@ -199,68 +194,82 @@ const Contact = () => {
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Name <span className="text-red-500">*</span>
-                    </label>
+                <form onSubmit={handleSubmit} className="space-y-3">
+                  <div className="relative">
                     <input
                       id="name"
                       name="name"
                       type="text"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple"
-                      placeholder="John Doe"
+                      className="w-full px-4 pt-6 pb-2 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple peer"
+                      placeholder=" "
                       required
                     />
+                    <label 
+                      htmlFor="name"
+                      className="absolute text-sm text-gray-500 duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                    >
+                      Your Name <span className="text-red-500">*</span>
+                    </label>
                   </div>
                   
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                      Email Address <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple"
-                      placeholder="john@example.com"
-                      required
-                    />
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div className="relative">
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="w-full px-4 pt-6 pb-2 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple peer"
+                        placeholder=" "
+                        required
+                      />
+                      <label 
+                        htmlFor="email"
+                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                      >
+                        Email Address <span className="text-red-500">*</span>
+                      </label>
+                    </div>
+                    
+                    <div className="relative">
+                      <input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="w-full px-4 pt-6 pb-2 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple peer"
+                        placeholder=" "
+                      />
+                      <label 
+                        htmlFor="phone"
+                        className="absolute text-sm text-gray-500 duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                      >
+                        Phone Number
+                      </label>
+                    </div>
                   </div>
                   
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
-                      Phone Number
-                    </label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple"
-                      placeholder="+1 (123) 456-7890"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                      Your Message <span className="text-red-500">*</span>
-                    </label>
+                  <div className="relative">
                     <textarea
                       id="message"
                       name="message"
-                      rows={5}
+                      rows={3}
                       value={formData.message}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple"
-                      placeholder="How can we help you?"
+                      className="w-full px-4 pt-6 pb-2 border border-gray-300 rounded-lg focus:ring-apex-purple focus:border-apex-purple peer"
+                      placeholder=" "
                       required
                     ></textarea>
+                    <label 
+                      htmlFor="message"
+                      className="absolute text-sm text-gray-500 duration-300 transform -translate-y-3 scale-75 top-4 z-10 origin-[0] left-4 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-3"
+                    >
+                      Your Message <span className="text-red-500">*</span>
+                    </label>
                   </div>
                   
                   {submitError && (
@@ -272,7 +281,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className={`button-gradient w-full px-6 py-3 rounded-lg flex items-center justify-center shadow-soft ${
+                    className={`w-full px-6 py-3 rounded-lg flex items-center justify-center shadow-soft bg-apex-purple text-white hover:bg-opacity-90 transition-colors ${
                       isSubmitting ? 'opacity-70 cursor-not-allowed' : ''
                     }`}
                   >
