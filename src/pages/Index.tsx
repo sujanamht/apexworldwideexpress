@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import HeroSection from '@/components/HeroSection';
+import HomeHeroSection from '@/components/HomeHeroSection';
 import ServiceCard from '@/components/ServiceCard';
 import FeatureCard from '@/components/FeatureCard';
 import TestimonialCard from '@/components/TestimonialCard';
@@ -154,7 +154,7 @@ const Index = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-      <HeroSection 
+      <HomeHeroSection 
         title="Fast, Secure, and Reliable Parcel Services" 
         subtitle="Delivering across the USA and beyond with speed & efficiency" 
         backgroundImage="bg-[url('/slider.jpg')]"
