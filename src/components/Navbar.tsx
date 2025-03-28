@@ -31,8 +31,8 @@ const Navbar = () => {
 
   return (
     <header 
-    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'py-3 backdrop-blur-md bg-white/70' : 'py-5'
+    className={`fixed top-0 left-0 right-0 z-50  ${
+      isScrolled ? 'py-3 backdrop-blur-md bg-white' : 'py-5'
     }`}
   >
   
@@ -48,7 +48,7 @@ const Navbar = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8 text-apex-purple">
+          <nav className="hidden  md:flex items-center space-x-8 text-apex-purple">
             <NavLink to="/" active={isActive('/')} isScrolled={isScrolled}>Home</NavLink>
             <NavLink to="/about" active={isActive('/about')} isScrolled={isScrolled}>About</NavLink>
             <NavLink to="/services" active={isActive('/services')} isScrolled={isScrolled}>Services</NavLink>
